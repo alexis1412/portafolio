@@ -122,14 +122,6 @@
         border-radius: 1rem; /* 16px */
         overflow: hidden;
       }
-      .flip-card-back {
-        background-color: #1e293b; /* slate-800 */
-        transform: rotateY(180deg);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 1.5rem; /* p-6 */
-      }
 
       /* --- ✨ ESTILO AJUSTADO PARA RESALTAR SECCIONES MÁS SUTIL (Versión solo color de fondo) ✨ --- */
       .section-highlight {
@@ -273,7 +265,7 @@
       <main>
         <section id="home" class="relative overflow-hidden pt-32 md:pt-40 pb-20">
           <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div class="grid items-center gap-12 md:grid-cols-2">
+            <div class="flex flex-col items-center gap-12 md:grid md:grid-cols-2">
               <div
                 class="space-y-6 text-center md:text-left"
                 data-aos="fade-right"
@@ -308,7 +300,7 @@
               </div>
 
               <div
-                class=" overflow-x-auto`"
+                class="relative mx-4  w-full "
                 data-aos="zoom-in"
                 data-aos-delay="300"
                 data-aos-duration="1000"
@@ -336,11 +328,7 @@
                 <div class="h-80 w-80">
                   <div class="flip-card-inner shadow-smooth border border-white/10 rounded-2xl">
                     <div class="flip-card-front">
-                      <img
-                        src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=800&auto=format&fit=crop"
-                        alt="Retrato de Alexis Mendoza"
-                        class="h-full w-full object-cover"
-                      />
+                      <img src="" alt="foto" class="h-full w-full object-cover" />
                     </div>
                   </div>
                 </div>
@@ -749,13 +737,11 @@
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         AOS.init({
-          
           once: true,
           mirror: false,
           offset: 80,
           duration: 1000,
           easing: "ease-out-quad",
-
         });
 
         const menuBtn = document.getElementById("menu-btn");
