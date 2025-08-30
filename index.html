@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Portafolio | Alexis Mendoza | Desarrollador Web</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <style>
+  :root {
+    --accent: #22c55e;
+  }
+  html,
+  body {
+    background-color: #020617; /* bg-slate-950 */
+    background-image: radial-gradient(
+      ellipse 80% 50% at 50% -20%,
+      rgba(120, 119, 198, 0.3),
+      transparent
+    );
+  }
+
+  .overflow-wrapper {
+    position: relative;
+    overflow-x: hidden;
+  }
+  .accent-bg {
+    background-color: var(--accent);
+  }
+  .accent-text {
+    color: var(--accent);
+  }
+  .accent-ring {
+    --tw-ring-color: var(--accent);
+  }
+  .glass {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: rgba(23, 23, 33, 0.6);
+  }
+  .shadow-smooth {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  }
+  ::-webkit-scrollbar {
+    width: 8px;
+    background: #020617;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: var(--accent);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #16a34a;
+  }
+
+  /* --- NUEVOS ESTILOS PARA EL BLOQUE DE CÓDIGO --- */
+  .code-block {
+    font-family: "Fira Code", "Courier New", monospace;
+    font-size: 0.875rem; /* 14px */
+    line-height: 1.5;
+  }
+  .code-keyword {
+    color: #c792ea;
+  }
+  .code-function {
+    color: #82aaff;
+  }
+  .code-variable {
+    color: #f07178;
+  }
+  .code-string {
+    color: #c3e88d;
+  }
+  .code-comment {
+    color: #637777;
+  }
+  .code-class {
+    color: #ffcb6b;
+  }
+  .cursor {
+    display: inline-block;
+    width: 8px;
+    height: 1.2em;
+    background-color: var(--accent);
+    margin-left: 4px;
+    animation: blink 1s infinite;
+  }
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  /* --- NUEVOS ESTILOS PARA LA TARJETA GIRATORIA --- */
+  .flip-card {
+    perspective: 1000px;
+  }
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.7s;
+    transform-style: preserve-3d;
+  }
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 1rem; /* 16px */
+    overflow: hidden;
+  }
+  .flip-card-back {
+    background-color: #1e293b; /* slate-800 */
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem; /* p-6 */
+  }
+  
+  /* --- ✨ ESTILO AJUSTADO PARA RESALTAR SECCIONES MÁS SUTIL (Versión solo color de fondo) ✨ --- */
+  .section-highlight {
+    background-color: #070c1c; /* Un tono ligeramente diferente del fondo principal */
+    /* Eliminamos background-image, border-top y border-bottom para máxima sutileza */
+  }
+</style>
+  </head>
+
+  <body class="text-slate-100 antialiased">
+    <div class="overflow-wrapper">
+      <header class="fixed inset-x-0 top-0 z-50">
+        <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Global">
+          <div
+            class="mt-4 flex items-center justify-between rounded-2xl glass border border-white/10 p-3 shadow-smooth"
+            data-aos="fade-down"
+            data-aos-duration="1000"
+          >
+            <a href="#home" class="flex items-center gap-2 font-bold tracking-wide">
+              <svg
+                class="h-8 w-8 accent-bg rounded-lg p-1 text-slate-950"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8 17.5L12 21.5L16 17.5"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M12 21.5V14.5"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M12 2.5V9.5"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M16 6.5L12 2.5L8 6.5"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span>Alexis Mendoza</span>
+            </a>
+            <ul class="hidden gap-6 md:flex">
+              <li><a href="#home" class="hover:accent-text transition-colors">Inicio</a></li>
+              <li><a href="#about" class="hover:accent-text transition-colors">Sobre mí</a></li>
+              <li><a href="#services" class="hover:accent-text transition-colors">Colaborar</a></li>
+              <li>
+                <a href="#portfolio" class="hover:accent-text transition-colors">Proyectos</a>
+              </li>
+              <li><a href="#contact" class="hover:accent-text transition-colors">Contacto</a></li>
+            </ul>
+            <div class="md:hidden">
+              <button
+                id="menu-btn"
+                type="button"
+                class="z-50 p-2 rounded-md hover:accent-bg focus:outline-none focus:ring-2 focus:ring-inset accent-ring"
+                aria-controls="mobile-menu"
+                aria-expanded="false"
+              >
+                <span class="sr-only">Abrir menú principal</span>
+                <svg
+                  id="menu-icon-open"
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+                <svg
+                  id="menu-icon-close"
+                  class="h-6 w-6 hidden"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div
+            id="mobile-menu"
+            class="hidden md:hidden mt-2 rounded-2xl glass border border-white/10 shadow-smooth"
+          >
+            <ul class="flex flex-col items-center space-y-4 py-6">
+              <li>
+                <a href="#home" class="mobile-link hover:accent-text transition-colors">Inicio</a>
+              </li>
+              <li>
+                <a href="#about" class="mobile-link hover:accent-text transition-colors"
+                  >Sobre mí</a
+                >
+              </li>
+              <li>
+                <a href="#services" class="mobile-link hover:accent-text transition-colors"
+                  >Colaborar</a
+                >
+              </li>
+              <li>
+                <a href="#portfolio" class="mobile-link hover:accent-text transition-colors"
+                  >Proyectos</a
+                >
+              </li>
+              <li>
+                <a href="#contact" class="mobile-link hover:accent-text transition-colors"
+                  >Contacto</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <section id="home" class="relative overflow-hidden pt-40 pb-20">
+          <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="grid items-center gap-12 md:grid-cols-2">
+              <div
+                class="space-y-6 text-center md:text-left"
+                data-aos="fade-right"
+                data-aos-duration="1000"
+              >
+                <p
+                  class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80"
+                >
+                  Disponible para colaborar
+                  <span class="inline-block h-2 w-2 animate-pulse rounded-full accent-bg"></span>
+                </p>
+                <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+                  Hola, soy <span class="accent-text">Alexis Mendoza</span><br />Desarrollador Web
+                </h1>
+                <p class="max-w-xl mx-auto md:mx-0 text-white/70">
+                  Construyo sitios rápidos y modernos con HTML, CSS, JS, Tailwind, PHP y Laravel. Me
+                  apasiona aprender y busco colaborar en proyectos innovadores.
+                </p>
+                <div class="flex items-center justify-center md:justify-start gap-4 mt-8">
+                  <a
+                    href="https://github.com/tu-usuario"
+                    target="_blank"
+                    class="inline-block rounded-xl accent-bg px-5 py-3 text-slate-900 font-semibold hover:bg-green-400 transition-colors"
+                    >Ver GitHub</a
+                  >
+                  <a
+                    href="#contact"
+                    class="inline-flex items-center gap-2 font-semibold hover:accent-text transition-colors"
+                    >Contactar <span aria-hidden="true">→</span></a
+                  >
+                </div>
+              </div>
+
+              <div
+                class="relative"
+                data-aos="zoom-in"
+                data-aos-delay="300"
+                data-aos-duration="1000"
+              >
+                <div class="glass rounded-2xl border border-white/10 p-4 shadow-smooth">
+                  <div class="flex items-center gap-2 mb-4">
+                    <span class="h-3.5 w-3.5 rounded-full bg-red-500"></span>
+                    <span class="h-3.5 w-3.5 rounded-full bg-yellow-500"></span>
+                    <span class="h-3.5 w-3.5 rounded-full bg-green-500"></span>
+                  </div>
+                  <pre class="code-block"><code id="code-snippet"></code></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="about" class="py-24 section-highlight">
+          <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="text-center" data-aos="fade-up">
+              <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Sobre Mí</h2>
+            </div>
+            <div class="mt-14 grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
+              <div class="flex justify-center" data-aos="zoom-in-right" data-aos-duration="1000">
+                <div class="h-80 w-80">
+                  <div class="flip-card-inner shadow-smooth border border-white/10 rounded-2xl">
+                    <div class="flip-card-front">
+                      <img
+                        src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=800&auto=format&fit=crop"
+                        alt="Retrato de Alexis Mendoza"
+                        class="h-full w-full object-cover"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div data-aos="fade-left" data-aos-duration="1000">
+                <p class="text-lg text-white/80">
+                  Mi viaje en el desarrollo web comenzó con una simple pregunta: '¿cómo funciona
+                  esto?'. Esa curiosidad es el motor que me impulsa a construir aplicaciones
+                  eficientes y a resolver problemas complejos a través del código. Disfruto del
+                  proceso completo, desde diseñar la lógica en el back-end con PHP y Laravel hasta
+                  dar vida a las ideas en el front-end con JavaScript.
+                </p>
+                <p class="mt-4 text-lg text-white/80">
+                  Aunque mi carrera profesional está despegando, mi portafolio demuestra mi
+                  dedicación y mi capacidad para aprender rápido y aplicar nuevas tecnologías de
+                  manera efectiva. Busco activamente colaborar en proyectos donde pueda no solo
+                  aportar mis habilidades, sino también crecer junto a un equipo talentoso.
+                </p>
+                <div class="mt-8 flex flex-wrap gap-4">
+                  <span
+                    class="rounded-full bg-green-500/10 px-4 py-2 text-sm font-medium text-green-400"
+                    >PHP</span
+                  >
+                  <span
+                    class="rounded-full bg-green-500/10 px-4 py-2 text-sm font-medium text-green-400"
+                    >Laravel</span
+                  >
+                  <span
+                    class="rounded-full bg-green-500/10 px-4 py-2 text-sm font-medium text-green-400"
+                    >JavaScript</span
+                  >
+                  <span
+                    class="rounded-full bg-green-500/10 px-4 py-2 text-sm font-medium text-green-400"
+                    >Tailwind CSS</span
+                  >
+                  <span
+                    class="rounded-full bg-green-500/10 px-4 py-2 text-sm font-medium text-green-400"
+                    >HTML5 & CSS3</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="portfolio" class="py-24">
+          <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="text-center" data-aos="fade-up">
+              <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Mis Proyectos</h2>
+              <p class="mt-4 max-w-2xl mx-auto text-lg text-white/70">
+                Estos son algunos de los proyectos que he construido para practicar y demostrar mis
+                habilidades.
+              </p>
+            </div>
+
+            <div class="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              <article
+                data-aos="fade-up"
+                data-aos-delay="200"
+                class="flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-smooth transition-all duration-300 hover:border-green-500/30 hover:shadow-green-500/10"
+              >
+                <a href="#" target="_blank" class="block">
+                  <img
+                    src="https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="Vista previa del proyecto TaskManager"
+                    class="h-48 w-full object-cover"
+                  />
+                </a>
+                <div class="flex flex-col flex-1 p-6">
+                  <h3 class="text-xl font-semibold">TaskManager App</h3>
+                  <p class="mt-2 text-sm text-white/70 flex-1">
+                    Una aplicación web para gestionar tareas diarias, desarrollada con Laravel en el
+                    backend y una interfaz reactiva.
+                  </p>
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    <span
+                      class="rounded-full bg-green-500/10 px-3 py-1 text-xs font-medium text-green-400"
+                      >Laravel</span
+                    >
+                    <span
+                      class="rounded-full bg-green-500/10 px-3 py-1 text-xs font-medium text-green-400"
+                      >Tailwind CSS</span
+                    >
+                    <span
+                      class="rounded-full bg-green-500/10 px-3 py-1 text-xs font-medium text-green-400"
+                      >JavaScript</span
+                    >
+                  </div>
+                  <div class="mt-6 flex items-center justify-end gap-4">
+                    <a
+                      href="#"
+                      target="_blank"
+                      class="flex items-center gap-1.5 text-sm font-semibold text-white/80 hover:accent-text transition-colors"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path
+                          d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                        ></path>
+                      </svg>
+                      Código
+                    </a>
+                    <a
+                      href="#"
+                      target="_blank"
+                      class="flex items-center gap-1.5 text-sm font-semibold text-white/80 hover:accent-text transition-colors"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                      </svg>
+                      Demo
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <article
+                data-aos="fade-up"
+                data-aos-delay="400"
+                class="flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-smooth transition-all duration-300 hover:border-green-500/30 hover:shadow-green-500/10"
+              >
+                <a href="#" target="_blank" class="block">
+                  <img
+                    src="https://images.pexels.com/photos/1181373/pexels-photo-1181373.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="Vista previa del proyecto E-commerce"
+                    class="h-48 w-full object-cover"
+                  />
+                </a>
+                <div class="flex flex-col flex-1 p-6">
+                  <h3 class="text-xl font-semibold">E-commerce de Ropa</h3>
+                  <p class="mt-2 text-sm text-white/70 flex-1">
+                    Plataforma de comercio electrónico con catálogo de productos, carrito de compras
+                    y pasarela de pago simulada.
+                  </p>
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    <span
+                      class="rounded-full bg-green-500/10 px-3 py-1 text-xs font-medium text-green-400"
+                      >PHP</span
+                    >
+                    <span
+                      class="rounded-full bg-green-500/10 px-3 py-1 text-xs font-medium text-green-400"
+                      >MySQL</span
+                    >
+                    <span
+                      class="rounded-full bg-green-500/10 px-3 py-1 text-xs font-medium text-green-400"
+                      >Tailwind CSS</span
+                    >
+                  </div>
+                  <div class="mt-6 flex items-center justify-end gap-4">
+                    <a
+                      href="#"
+                      target="_blank"
+                      class="flex items-center gap-1.5 text-sm font-semibold text-white/80 hover:accent-text transition-colors"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path
+                          d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                        ></path>
+                      </svg>
+                      Código
+                    </a>
+                    <a
+                      href="#"
+                      target="_blank"
+                      class="flex items-center gap-1.5 text-sm font-semibold text-white/80 hover:accent-text transition-colors"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                      </svg>
+                      Demo
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <article
+                data-aos="fade-up"
+                data-aos-delay="600"
+                class="flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-smooth transition-all duration-300 hover:border-green-500/30 hover:shadow-green-500/10"
+              >
+                <a href="#" target="_blank" class="block">
+                  <img
+                    src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="Vista previa del proyecto Landing Page"
+                    class="h-48 w-full object-cover"
+                  />
+                </a>
+                <div class="flex flex-col flex-1 p-6">
+                  <h3 class="text-xl font-semibold">Landing Page para Startup</h3>
+                  <p class="mt-2 text-sm text-white/70 flex-1">
+                    Página de aterrizaje moderna y completamente responsiva, construida con foco en
+                    la velocidad y la optimización SEO.
+                  </p>
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    <span
+                      class="rounded-full bg-green-500/10 px-3 py-1 text-xs font-medium text-green-400"
+                      >HTML5</span
+                    >
+                    <span
+                      class="rounded-full bg-green-500/10 px-3 py-1 text-xs font-medium text-green-400"
+                      >CSS3</span
+                    >
+                    <span
+                      class="rounded-full bg-green-500/10 px-3 py-1 text-xs font-medium text-green-400"
+                      >JavaScript</span
+                    >
+                  </div>
+                  <div class="mt-6 flex items-center justify-end gap-4">
+                    <a
+                      href="#"
+                      target="_blank"
+                      class="flex items-center gap-1.5 text-sm font-semibold text-white/80 hover:accent-text transition-colors"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path
+                          d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                        ></path>
+                      </svg>
+                      Código
+                    </a>
+                    <a
+                      href="#"
+                      target="_blank"
+                      class="flex items-center gap-1.5 text-sm font-semibold text-white/80 hover:accent-text transition-colors"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                      </svg>
+                      Demo
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+        
+        <section id="services" class="py-24 section-highlight">
+          <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="text-center" data-aos="fade-up">
+              <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+                ¿Cómo podemos colaborar?
+              </h2>
+              <p class="mt-4 max-w-2xl mx-auto text-lg text-white/70">
+                Estoy abierto a oportunidades donde pueda aportar valor y seguir creciendo como
+                profesional.
+              </p>
+            </div>
+            <div class="mt-14 grid grid-cols-1 gap-8 md:grid-cols-3">
+              <article
+                class="flex flex-col items-center text-center rounded-2xl border border-white/10 bg-slate-950/20 p-8"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <h3 class="mb-2 text-lg font-semibold">Desarrollo Front-End</h3>
+                <p class="text-sm text-white/70">
+                  Creación de interfaces interactivas y responsivas con HTML, CSS, Tailwind y
+                  JavaScript, asegurando una experiencia de usuario impecable.
+                </p>
+              </article>
+              <article
+                class="flex flex-col items-center text-center rounded-2xl border border-white/10 bg-slate-950/20 p-8"
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
+                <h3 class="mb-2 text-lg font-semibold">Desarrollo Back-End</h3>
+                <p class="text-sm text-white/70">
+                  Implementación de lógica de servidor, APIs y bases de datos utilizando PHP y
+                  Laravel para construir aplicaciones robustas.
+                </p>
+              </article>
+              <article
+                class="flex flex-col items-center text-center rounded-2xl border border-white/10 bg-slate-950/20 p-8"
+                data-aos="fade-up"
+                data-aos-delay="600"
+              >
+                <h3 class="mb-2 text-lg font-semibold">Proyectos Personales</h3>
+                <p class="text-sm text-white/70">
+                  Abierto a colaborar en proyectos de código abierto o startups en etapa inicial
+                  donde pueda aplicar mi entusiasmo y habilidades.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="py-12 border-t border-white/10">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="flex flex-col items-center justify-between gap-6 md:flex-row">
+            <div class="flex items-center gap-4">
+              <a
+                href="https://github.com/tu-usuario"
+                target="_blank"
+                class="text-white/60 hover:accent-text transition-colors"
+                >GitHub</a
+              >
+              <a
+                href="https://linkedin.com/in/tu-usuario"
+                target="_blank"
+                class="text-white/60 hover:accent-text transition-colors"
+                >LinkedIn</a
+              >
+              <a
+                href="https://twitter.com/tu-usuario"
+                target="_blank"
+                class="text-white/60 hover:accent-text transition-colors"
+                >Twitter</a
+              >
+            </div>
+            <p class="text-sm text-center text-white/60">
+              &copy; 2025 Alexis Mendoza. Todos los derechos reservados.
+            </p>
+          </div>
+        </div>
+      </footer>
+
+      <a
+        href="https://wa.me/584141234567"
+        target="_blank"
+        class="fixed bottom-6 right-6 accent-bg p-4 rounded-full shadow-lg hover:bg-green-400 transition-colors"
+        aria-label="Contactar por WhatsApp"
+        data-aos="zoom-in"
+        data-aos-delay="800"
+        data-aos-duration="1000"
+        data-aos-anchor-placement="top-bottom"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          class="w-6 h-6 text-slate-900"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M20.52 3.48A11.88 11.88 0 0012 0C5.37 0 .04 5.33.04 11.92c0 2.1.55 4.14 1.61 5.94L0 24l6.3-1.64A11.91 11.91 0 0012 23.84c6.63 0 11.96-5.33 11.96-11.92 0-3.19-1.24-6.19-3.44-8.44zM12 21.3a9.3 9.3 0 01-4.74-1.3l-.34-.2-3.74.97 1-3.65-.24-.38a9.29 9.29 0 01-1.43-4.86c0-5.16 4.2-9.36 9.36-9.36 2.5 0 4.85.98 6.62 2.75a9.31 9.31 0 012.74 6.61c0 5.16-4.2 9.36-9.36 9.36zm5.1-6.98c-.28-.14-1.65-.82-1.91-.91-.26-.1-.45-.14-.64.14-.2.28-.73.91-.89 1.1-.16.18-.33.2-.61.07-.28-.14-1.17-.43-2.23-1.37-.82-.73-1.37-1.64-1.53-1.91-.16-.28-.02-.43.12-.57.12-.12.28-.33.42-.49.14-.16.18-.28.28-.47.09-.2.05-.36-.02-.5-.07-.14-.64-1.54-.88-2.1-.23-.55-.47-.47-.64-.48h-.55c-.2 0-.5.07-.76.36-.26.28-1 1-1 2.44s1.02 2.83 1.16 3.02c.14.18 2.01 3.2 4.87 4.48.68.29 1.22.47 1.63.6.68.22 1.3.19 1.79.12.55-.08 1.65-.67 1.89-1.31.23-.65.23-1.21.16-1.33-.07-.11-.25-.18-.52-.32z"
+          />
+        </svg>
+      </a>
+    </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        AOS.init({
+          once: true,
+          mirror: false,
+          offset: 80,
+          duration: 1000,
+          easing: "ease-out-quad",
+        });
+
+        const menuBtn = document.getElementById("menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const menuIconOpen = document.getElementById("menu-icon-open");
+        const menuIconClose = document.getElementById("menu-icon-close");
+
+        const toggleMenu = () => {
+          const isExpanded = menuBtn.getAttribute("aria-expanded") === "true";
+          menuBtn.setAttribute("aria-expanded", !isExpanded);
+          mobileMenu.classList.toggle("hidden");
+          menuIconOpen.classList.toggle("hidden");
+          menuIconClose.classList.toggle("hidden");
+        };
+        menuBtn.addEventListener("click", toggleMenu);
+
+        const mobileLinks = document.querySelectorAll(".mobile-link");
+        mobileLinks.forEach((link) => {
+          link.addEventListener("click", () => {
+            if (menuBtn.getAttribute("aria-expanded") === "true") {
+              toggleMenu();
+            }
+          });
+        });
+
+        // --- NUEVO SCRIPT PARA LA ANIMACIÓN DE CÓDIGO ---
+        const codeSnippetEl = document.getElementById("code-snippet");
+        const code = [
+          `<span class="code-comment">// app/Http/Controllers/ContactController.php</span>`,
+          `<span class="code-keyword">namespace</span> App\\Http\\Controllers;`,
+          ``,
+          `<span class="code-keyword">class</span> <span class="code-class">ContactController</span> <span class="code-keyword">extends</span> <span class="code-class">Controller</span>`,
+          `{`,
+          `    <span class="code-keyword">public function</span> <span class="code-function">send</span>(<span class="code-class">Request</span> <span class="code-variable">$request</span>)`,
+          `    {`,
+          `        <span class="code-variable">$validated</span> = <span class="code-variable">$request</span>-><span class="code-function">validate</span>([`,
+          `            <span class="code-string">'name'</span> => <span class="code-string">'required'</span>,`,
+          `            <span class="code-string">'email'</span> => <span class="code-string">'required|email'</span>,`,
+          `        ]);`,
+          ``,
+          `        <span class="code-comment">// Lógica para enviar el email...</span>`,
+          `    }`,
+          `}`,
+        ];
+
+        let lineIndex = 0;
+        let charIndex = 0;
+
+        function typeCode() {
+          if (!codeSnippetEl) return;
+          if (lineIndex < code.length) {
+            const currentLine = code[lineIndex];
+            // Si la línea contiene etiquetas span, avanza rápido para mostrarla de una vez
+            if (currentLine.includes("<span")) {
+              codeSnippetEl.innerHTML = code.slice(0, lineIndex + 1).join("<br>");
+              charIndex = currentLine.length;
+            } else {
+              codeSnippetEl.innerHTML =
+                code.slice(0, lineIndex).join("<br>") +
+                "<br>" +
+                currentLine.substring(0, charIndex + 1);
+            }
+
+            if (charIndex < currentLine.length) {
+              charIndex++;
+              setTimeout(typeCode, 15);
+            } else {
+              charIndex = 0;
+              lineIndex++;
+              setTimeout(typeCode, 100);
+            }
+          } else {
+            // Al finalizar, añade el cursor parpadeante
+            codeSnippetEl.innerHTML = code.join("<br>") + '<span class="cursor"></span>';
+          }
+        }
+
+        typeCode();
+      });
+    </script>
+  </body>
+</html>
