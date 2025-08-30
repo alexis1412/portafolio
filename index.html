@@ -27,7 +27,6 @@
     <link rel="stylesheet" href="src/output.css" />
     <link rel="stylesheet" href="src/estilos.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    
 
     <script type="application/ld+json">
       {
@@ -97,11 +96,15 @@
             <ul class="hidden gap-6 md:flex">
               <li><a href="#home" class="hover:accent-text transition-colors">Inicio</a></li>
               <li><a href="#about" class="hover:accent-text transition-colors">Sobre mí</a></li>
-
               <li>
                 <a href="#portfolio" class="hover:accent-text transition-colors">Proyectos</a>
               </li>
               <li><a href="#services" class="hover:accent-text transition-colors">Colaborar</a></li>
+              <li>
+                <a href="#contact" class="mobile-link hover:accent-text transition-colors"
+                  >Contacto</a
+                >
+              </li>
             </ul>
             <div class="md:hidden">
               <button
@@ -167,6 +170,11 @@
               <li>
                 <a href="#services" class="mobile-link hover:accent-text transition-colors"
                   >Colaborar</a
+                >
+              </li>
+              <li>
+                <a href="#contact" class="mobile-link hover:accent-text transition-colors"
+                  >Contacto</a
                 >
               </li>
             </ul>
@@ -241,7 +249,11 @@
                 <div class="h-80 w-80">
                   <div class="flip-card-inner shadow-smooth border border-white/10 rounded-2xl">
                     <div class="flip-card-front">
-                      <img src="" alt="Retrato de Alexis Mendoza, desarrollador web" class="h-full w-full object-cover" />
+                      <img
+                        src=""
+                        alt="Retrato de Alexis Mendoza, desarrollador web"
+                        class="h-full w-full object-cover"
+                      />
                     </div>
                   </div>
                 </div>
@@ -589,6 +601,97 @@
                 </p>
               </article>
             </div>
+          </div>
+        </section>
+
+        <section id="contact" class="py-24">
+          <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="text-center" data-aos="fade-up">
+              <h2
+                class="text-3xl font-bold tracking-tight sm:text-4xl inline-flex items-center text-left pb-2 border-b-2 border-green-500/50 mb-8"
+              >
+                Hablemos
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="#22c55e"
+                  class="w-8 h-8 ml-4 svg-icon"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z"
+                  />
+                </svg>
+              </h2>
+
+              <p class="mt-4 max-w-2xl mx-auto text-lg text-white/70">
+                ¿Tienes un proyecto en mente o quieres colaborar? Envíame un mensaje y me pondré en
+                contacto contigo.
+              </p>
+            </div>
+
+            <form
+              id="contact-form"
+              action="https://formspree.io/f/xrbaqayl"
+              method="POST"
+              class="mt-12 max-w-2xl mx-auto"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 mt-8">
+                <div>
+                  <div class="mt-1">
+                    <input
+                      type="text"
+                      name="name"
+                      id="name"
+                      autocomplete="name"
+                      placeholder="Tu Nombre"
+                      required
+                      class="block w-full rounded-lg border border-white/20 bg-white/5 px-4 py-3 text-white/80 placeholder:text-white/40 transition-all duration-300 hover:border-green-500/30 hover:shadow-green-500/10 focus:border-green-500/30 focus:shadow-green-500/10 focus:outline-none"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <div class="mt-1">
+                    <input
+                      id="email"
+                      name="email"
+                      type="email"
+                      autocomplete="email"
+                      placeholder="Tu Correo Electrónico"
+                      required
+                      class="block w-full rounded-lg border border-white/20 bg-white/5 px-4 py-3 text-white/80 placeholder:text-white/40 transition-all duration-300 hover:border-green-500/30 hover:shadow-green-500/10 focus:border-green-500/30 focus:shadow-green-500/10 focus:outline-none"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="mt-6">
+                <div class="mt-1">
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    placeholder="Escribe tu mensaje aquí..."
+                    required
+                    class="block w-full rounded-lg border border-white/20 bg-white/5 px-4 py-3 text-white/80 placeholder:text-white/40 transition-all duration-300 hover:border-green-500/30 hover:shadow-green-500/10 focus:border-green-500/30 focus:shadow-green-500/10 focus:outline-none"
+                  ></textarea>
+                </div>
+              </div>
+              <div class="mt-8">
+                <button
+                  type="submit"
+                  class="inline-block w-full rounded-xl accent-bg px-5 py-3 text-slate-900 font-semibold hover:bg-green-400 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 focus:ring-offset-slate-900"
+                >
+                  Enviar Mensaje
+                </button>
+              </div>
+              <div id="form-status" class="mt-4 text-center"></div>
+            </form>
           </div>
         </section>
       </main>

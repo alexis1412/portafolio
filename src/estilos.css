@@ -117,3 +117,8 @@
         background-color: #070c1c; /* Un tono ligeramente diferente del fondo principal */
         /* Eliminamos background-image, border-top y border-bottom para máxima sutileza */
       }
+
+      .svg-icon {
+        margin-left: 10px; /* 16px */
+      }
+  
