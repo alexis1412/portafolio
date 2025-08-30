@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // --- NUEVO SCRIPT PARA LA ANIMACIÓN DE CÓDIGO ---
+  // SCRIPT PARA LA ANIMACIÓN DE CÓDIGO
   const codeSnippetEl = document.getElementById("code-snippet");
   const code = [
     `<span class="code-comment">// app/Http/Controllers/ContactController.php</span>`,
@@ -57,7 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!codeSnippetEl) return;
     if (lineIndex < code.length) {
       const currentLine = code[lineIndex];
-      // Si la línea contiene etiquetas span, avanza rápido para mostrarla de una vez
       if (currentLine.includes("<span")) {
         codeSnippetEl.innerHTML = code.slice(0, lineIndex + 1).join("<br>");
         charIndex = currentLine.length;
@@ -84,31 +83,28 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 window.addEventListener("DOMContentLoaded", function () {
-  // Selecciona el formulario y el div de estado por sus IDs
   const form = document.getElementById("contact-form");
   const status = document.getElementById("form-status");
 
-  // Función para mostrar un mensaje de éxito
+  //  mostrar un mensaje de éxito
   function success() {
-    form.reset(); // Limpia los campos del formulario
+    form.reset();
     status.innerHTML = "¡Gracias! Tu mensaje ha sido enviado.";
     status.style.color = "#22c55e"; // Color verde
   }
 
-  // Función para mostrar un mensaje de error
+  //  mostrar un mensaje de error
   function error() {
     status.innerHTML = "Oops! Hubo un problema al enviar tu formulario.";
     status.style.color = "#ef4444"; // Color rojo
   }
 
-  // Escucha el evento 'submit' del formulario
   form.addEventListener("submit", function (ev) {
-    // Previene el comportamiento por defecto (el redireccionamiento)
     ev.preventDefault();
 
     const data = new FormData(form);
 
-    // Envía los datos usando AJAX (Fetch API)
+    // Envía los datos usando AJAX
     ajax(form.method, form.action, data, success, error);
   });
 });
@@ -124,19 +120,18 @@ function ajax(method, url, data, success, error) {
   })
     .then((response) => {
       if (response.ok) {
-        success(); // Si todo salió bien, llama a la función de éxito
+        success();
       } else {
-        // Si Formspree devuelve un error, intenta obtener más detalles
         response.json().then((data) => {
           if (Object.hasOwn(data, "errors")) {
             status.innerHTML = data["errors"].map((error) => error["message"]).join(", ");
           } else {
-            error(); // Si no hay detalles, muestra el error genérico
+            error();
           }
         });
       }
     })
     .catch(() => {
-      error(); // Muestra error en caso de fallo de red
+      error();
     });
 }
