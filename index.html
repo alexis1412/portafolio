@@ -5,9 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Portafolio | Alexis Mendoza | Desarrollador Web</title>
+    <meta
+      name="description"
+      content="Portafolio de Alexis Mendoza, desarrollador web full-stack especializado en PHP, Laravel y Tailwind CSS. Descubre mis proyectos y cómo puedo ayudarte a construir soluciones web modernas."
+    />
+    <meta property="og:title" content="Portafolio | Alexis Mendoza | Desarrollador Web" />
+    <meta
+      property="og:description"
+      content="Desarrollador web full-stack especializado en PHP, Laravel y soluciones web modernas."
+    />
+    <meta property="og:url" content="https://www.tudominio.com" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Portafolio | Alexis Mendoza | Desarrollador Web" />
+    <meta
+      name="twitter:description"
+      content="Desarrollador web full-stack especializado en PHP, Laravel y soluciones web modernas."
+    />
+    <meta name="twitter:image" content="URL_A_LA_MISMA_IMAGEN_DE_ARRIBA.jpg" />
+    <link rel="canonical" href="https://https://alexis1412.github.io/portafolio/" />
     <link rel="stylesheet" href="src/output.css" />
     <link rel="stylesheet" href="src/estilos.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Alexis Mendoza",
+        "url": "https://alexis1412.github.io/portafolio/", // Tu dominio aquí
+        "image": "URL_A_TU_FOTO_DE_PERFIL.jpg", // URL completa a tu foto
+        "jobTitle": "Desarrollador Web",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Alexis Mendoza"
+        },
+        "knowsAbout": ["PHP", "Laravel", "JavaScript", "Tailwind CSS", "HTML5", "CSS3", "MySQL"],
+        "sameAs": ["https://github.com/alexis1412"]
+      }
+    </script>
   </head>
 
   <body class="text-slate-100 antialiased">
@@ -60,7 +97,7 @@
             <ul class="hidden gap-6 md:flex">
               <li><a href="#home" class="hover:accent-text transition-colors">Inicio</a></li>
               <li><a href="#about" class="hover:accent-text transition-colors">Sobre mí</a></li>
-              
+
               <li>
                 <a href="#portfolio" class="hover:accent-text transition-colors">Proyectos</a>
               </li>
@@ -163,6 +200,7 @@
                   <a
                     href="https://github.com/alexis1412"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="inline-block rounded-xl accent-bg px-5 py-3 text-slate-900 font-semibold hover:bg-green-400 transition-colors"
                     >Ver GitHub</a
                   >
@@ -203,7 +241,7 @@
                 <div class="h-80 w-80">
                   <div class="flip-card-inner shadow-smooth border border-white/10 rounded-2xl">
                     <div class="flip-card-front">
-                      <img src="" alt="foto" class="h-full w-full object-cover" />
+                      <img src="" alt="Retrato de Alexis Mendoza, desarrollador web" class="h-full w-full object-cover" />
                     </div>
                   </div>
                 </div>
@@ -560,14 +598,16 @@
           <div class="flex flex-col items-center justify-between gap-6 md:flex-row">
             <div class="flex items-center gap-4">
               <a
-                href="https://github.com/tu-usuario"
+                href="https://github.com/alexis1412"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="text-white/60 hover:accent-text transition-colors"
                 >GitHub</a
               >
               <a
-                href="https://linkedin.com/in/tu-usuario"
+                href="https://linkedin.com"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="text-white/60 hover:accent-text transition-colors"
                 >LinkedIn</a
               >
@@ -582,6 +622,7 @@
       <a
         href="https://wa.me/584124618344"
         target="_blank"
+        rel="noopener noreferrer"
         class="fixed bottom-6 right-6 accent-bg p-4 rounded-full shadow-lg hover:bg-green-400 transition-colors"
         aria-label="Contactar por WhatsApp"
         data-aos="zoom-in"
