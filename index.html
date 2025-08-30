@@ -271,7 +271,7 @@
       </header>
 
       <main>
-        <section id="home" class="relative overflow-hidden pt-40 pb-20">
+        <section id="home" class="relative overflow-hidden pt-32 md:pt-40 pb-20">
           <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="grid items-center gap-12 md:grid-cols-2">
               <div
@@ -308,7 +308,7 @@
               </div>
 
               <div
-                class="relative"
+                class=" overflow-x-auto`"
                 data-aos="zoom-in"
                 data-aos-delay="300"
                 data-aos-duration="1000"
@@ -749,11 +749,13 @@
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         AOS.init({
+          
           once: true,
           mirror: false,
           offset: 80,
           duration: 1000,
           easing: "ease-out-quad",
+
         });
 
         const menuBtn = document.getElementById("menu-btn");
