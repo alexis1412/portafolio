@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/alexis1412/portafolio/issues"
   },
-  "homepage": "https://github.com/alexis1412/portafolio#readme"
+  "homepage": "https://github.com/alexis1412/portafolio#readme",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.12",
+    "tailwindcss": "^4.1.12"
+  }
 }

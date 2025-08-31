@@ -1,2 +1,125 @@
 @import "tailwindcss";
-@import "estilos.css";
+
+  :root {
+        --accent: #22c55e;
+      }
+      html,
+      body {
+        background-color: #020617; /* bg-slate-950 */
+        background-image: radial-gradient(
+          ellipse 80% 50% at 50% -20%,
+          rgba(120, 119, 198, 0.3),
+          transparent
+        );
+      }
+
+      .overflow-wrapper {
+        position: relative;
+        overflow-x: hidden;
+      }
+      .accent-bg {
+        background-color: var(--accent);
+      }
+      .accent-text {
+        color: var(--accent);
+      }
+      .accent-ring {
+        --tw-ring-color: var(--accent);
+      }
+      .glass {
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        background: rgba(23, 23, 33, 0.6);
+      }
+      .shadow-smooth {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      }
+      ::-webkit-scrollbar {
+        width: 8px;
+        background: #020617;
+      }
+      ::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+        background-color: var(--accent);
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #16a34a;
+      }
+
+      /* --- NUEVOS ESTILOS PARA EL BLOQUE DE CÓDIGO --- */
+      .code-block {
+        font-family: "Fira Code", "Courier New", monospace;
+        font-size: 0.875rem; /* 14px */
+        line-height: 1.5;
+      }
+      .code-keyword {
+        color: #c792ea;
+      }
+      .code-function {
+        color: #82aaff;
+      }
+      .code-variable {
+        color: #f07178;
+      }
+      .code-string {
+        color: #c3e88d;
+      }
+      .code-comment {
+        color: #637777;
+      }
+      .code-class {
+        color: #ffcb6b;
+      }
+      .cursor {
+        display: inline-block;
+        width: 8px;
+        height: 1.2em;
+        background-color: var(--accent);
+        margin-left: 4px;
+        animation: blink 1s infinite;
+      }
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+      }
+
+      /* --- NUEVOS ESTILOS PARA LA TARJETA GIRATORIA --- */
+      .flip-card {
+        perspective: 1000px;
+      }
+      .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.7s;
+        transform-style: preserve-3d;
+      }
+      .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+      .flip-card-front,
+      .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-radius: 1rem; /* 16px */
+        overflow: hidden;
+      }
+
+      /* --- ✨ ESTILO AJUSTADO PARA RESALTAR SECCIONES MÁS SUTIL (Versión solo color de fondo) ✨ --- */
+      .section-highlight {
+        background-color: #070c1c; /* Un tono ligeramente diferente del fondo principal */
+        /* Eliminamos background-image, border-top y border-bottom para máxima sutileza */
+      }
+
+      .svg-icon {
+        margin-left: 10px; /* 16px */
+      }
+  
